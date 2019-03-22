@@ -1,6 +1,6 @@
 :- use_module(library(clpfd)).
 
-/* Just solve simple sodoku */
+/* Just solve simple sudoku */
 sudoku_solver(Rows) :-
     length(Rows, 9),
     maplist(same_length(Rows), Rows),
@@ -19,8 +19,8 @@ blocks([A, B, C | T1], [D, E, F | T2], [G, H, I | T3]) :-
     all_distinct([A, B, C, D, E, F ,G ,H ,I]),
     blocks(T1, T2, T3).
 
-/* Solve multiple sodoku */
-multiple_sodoku_solver(S0, S1, S2, S3, S4) :-
+/* Solve multiple sudoku */
+multiple_sudoku_solver(S0, S1, S2, S3, S4) :-
     
     sudoku_solver(S0),
     sudoku_solver(S1),
